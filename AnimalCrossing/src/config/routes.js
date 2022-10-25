@@ -2,7 +2,6 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Dimensions} from 'react-native';
 import Login from '../screens/login';
 import Inscription from '../screens/inscription';
 import Store from '../screens/store';
@@ -15,10 +14,7 @@ const Routes = () => {
 
     return (
         <NavigationContainer>
-          <Stack.Navigator
-            screenOptions={{
-              headerShown: false,
-            }}>
+          <Stack.Navigator initialRouteName="Login">
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Inscription" component={Inscription}/>
             <Stack.Screen name="Store" component={Store}/>

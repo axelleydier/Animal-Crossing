@@ -1,11 +1,12 @@
 import React from 'react';
 
 import {SafeAreaView, Text} from 'react-native';
+import Routes from './src/config/routes';
 
 const App = () => {
   return (
     <SafeAreaView>
-      <Text>Mettez ce que vous voulez ici</Text>
+      <Routes/>
     </SafeAreaView>
   );
 };
