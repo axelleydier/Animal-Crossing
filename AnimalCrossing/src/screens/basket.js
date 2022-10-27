@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Text, View} from 'react-native';
 
-const Basket = () => {
+const Basket = ({navigation}) => {
   return (
     <View>
       <Text>Basket</Text>

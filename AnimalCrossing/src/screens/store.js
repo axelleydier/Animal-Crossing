@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Text, View} from 'react-native';
 
-const Store = () => {
+const Store = ({navigation}) => {
   return (
     <View>
       <Text>Store</Text>
