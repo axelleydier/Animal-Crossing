@@ -5,7 +5,7 @@ import {AddBasket} from '../components/button';
 const Article = props => {
   return (
     <View style={styles.borderstyle}>
-        <Image source={props.img} style={styles.articleImg}/>
+        <Image source={{uri:props.img}} style={styles.articleImg}/>
         <Text style={styles.textstyle}>{props.title}</Text>
         <Text style={styles.textstyle}>{props.price}</Text>
         <AddBasket label="Ajouter au panier" onPress={() => console.error('Article Ajouté')}/>
