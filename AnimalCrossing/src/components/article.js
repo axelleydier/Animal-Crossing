@@ -2,12 +2,13 @@ import React, { cloneElement } from 'react';
 import {View, Text, Image, StyleSheet, Button} from 'react-native';
 import {AddBasket} from '../components/button';
 
-const Article = () => {
+const Article = props => {
   return (
     <View style={styles.borderstyle}>
-        <Image source={require('../assets/images/article.png')} style={styles.articleImg}/>
-        <Text style={styles.textstyle}>{title = "Tête de Néfertitif"}</Text>
-        <AddBasket label="ok"/>
+        <Image source={props.img} style={styles.articleImg}/>
+        <Text style={styles.textstyle}>{props.title}</Text>
+        <Text style={styles.textstyle}>{props.price}</Text>
+        <AddBasket label="Ajouter au panier" onPress={() => console.error('Article Ajouté')}/>
     </View>
   );
 };
@@ -29,7 +30,7 @@ const styles= StyleSheet.create({
   },
 
   textstyle:{
-    fontSize:20,
+    fontSize:15,
     color:'orange',
     fontWeight:'bold',
     textAlign: 'center'
