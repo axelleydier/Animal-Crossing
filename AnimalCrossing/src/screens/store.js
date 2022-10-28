@@ -38,7 +38,7 @@ const Store = ({navigation}) => {
           key={fossil['file-name']}
           img={fossil.image_uri}
           title={fossil.name['name-EUfr']}
-        price={fossil.price}/>
+          price={fossil.price + ' po'}/>
       );
       })}
     </ScrollView>

@@ -1,40 +1,37 @@
 import React, { cloneElement } from 'react';
-import {View, Text, Image, StyleSheet, Button} from 'react-native';
 import {AddBasket} from '../components/button';
+import styled from 'styled-components';
 
 const Article = props => {
   return (
-    <View style={styles.borderstyle}>
-        <Image source={{uri:props.img}} style={styles.articleImg}/>
-        <Text style={styles.textstyle}>{props.title}</Text>
-        <Text style={styles.textstyle}>{props.price}</Text>
+    <Square>
+        <Image source={{uri:props.img}}/>
+        <Text>{props.title}</Text>
+        <Text>{props.price}</Text>
         <AddBasket label="Ajouter au panier" onPress={() => console.error('Article Ajouté')}/>
-    </View>
+    </Square>
   );
 };
 
-const styles= StyleSheet.create({
+const Square= styled.View`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 5%;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+`;
 
-  borderstyle: {
-    resizeMode:'contain',
-    flex:0,
-    width:200,
-    height:200,
-    backgroundColor: "black",
-  },
-  articleImg: {
-    flex:1,
-    width: undefined,
-    height: undefined,
-    resizeMode:'contain',
-  },
+const Image= styled.Image`
+width:50%;
+height:50%;
+`
 
-  textstyle:{
-    fontSize:15,
-    color:'orange',
-    fontWeight:'bold',
-    textAlign: 'center'
-  },
-});
+const Text= styled.Text`
+  font-size: 20px;
+  font-weight:bold;
+  color: orange;
+  `
 
 export default Article;

@@ -13,7 +13,7 @@ const Routes = () => {
 
     return (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Store">
+          <Stack.Navigator initialRouteName="Login">
             <Stack.Screen name="Login" component={Login}/>
             <Stack.Screen name="Inscription" component={Inscription}/>
             <Stack.Screen name="Store" component={Store}/>
