@@ -2,13 +2,13 @@ import React, { cloneElement } from 'react';
 import {AddBasket} from '../components/button';
 import styled from 'styled-components';
 
-const Article = props => {
+const Article= props => {
   return (
     <Square>
         <Image source={{uri:props.img}}/>
         <Text>{props.title}</Text>
         <Text>{props.price}</Text>
-        <AddBasket label="Ajouter au panier" onPress={() => console.error('Article Ajouté')}/>
+        <AddBasket label="Ajouter au panier" onPress={props.onPress}/>
     </Square>
   );
 };
@@ -16,22 +16,20 @@ const Article = props => {
 const Square= styled.View`
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 5%;
   background-color: black;
   align-items: center;
   justify-content: center;
 `;
 
 const Image= styled.Image`
-width:50%;
-height:50%;
-`
+  width:150px;
+  height:200px;
+`;
 
 const Text= styled.Text`
   font-size: 20px;
   font-weight:bold;
   color: orange;
-  `
+`;
 
 export default Article;
