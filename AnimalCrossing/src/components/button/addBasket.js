@@ -10,8 +10,8 @@ const Button = ({onPress, label}) => {
 };
 
 const TouchableOpacity= styled.TouchableOpacity`
-  width: 100%;
-  height: 25px;
+  width: 50%;
+  height: 30px;
   background-color: orange;
   align-items: center;
   justify-content: center;

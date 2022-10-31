@@ -21,7 +21,7 @@ const Basket = () => {
     <ScrollView>
     {basket.map(basket => (
       <Article
-      key={basket.id}
+      key={basket.name['file-name']}
       img={basket.image_uri}
       title={basket.name['name-EUfr']}
       price={basket.price + ' po'}/>

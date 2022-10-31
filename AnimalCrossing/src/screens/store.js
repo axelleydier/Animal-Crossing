@@ -33,16 +33,16 @@ const Store = ({navigation}) => {
   
   const isInBasket = async fossil => {};
 
-  const AddOrRemoteToBasket = async article => {
-    console.log(article);
+  const AddOrRemoteToBasket = async fossil => {
+    console.log(fossil);
     const basket = (await AsyncStorage.getItem('basket')) !== null
     ? JSON.parse(await AsyncStorage.getItem('basket'))
     : [];
-    basket.push(article);
+    basket.push(fossil);
 
-    const exist = await isInBasket(article);
+    const exist = await isInBasket(fossil);
     if(exist) {
-      const newBasket = basket.filter(bask => bask.id !== article.id);
+      const newBasket = basket.filter(bask => bask.id !== fossil.id);
       await AsyncStorage.setItem('basket', JSON.stringify(newBasket));
     } else {
       await AsyncStorage.setItem('basket', JSON.stringify(basket));
@@ -53,7 +53,9 @@ const Store = ({navigation}) => {
 
   return (
     <View>
-      <AddBasket label="Panier" onPress={() => navigation.navigate('Basket')}/>
+      <AddBasket 
+      label="Panier" 
+      onPress={() => navigation.navigate('Basket')}/>
         <FlatList
           data={fossils}
           keyExtractor={item => item.id}
